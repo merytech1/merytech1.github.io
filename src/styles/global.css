@@ -1,0 +1,102 @@
+/* Palette matches the "radical" theme used on the GitHub profile */
+:root {
+  --bg: #141321;
+  --surface: #1b1a2d;
+  --surface-2: #232139;
+  --border: #2f2c4a;
+  --text: #ecebf5;
+  --muted: #a7a3c4;
+  --pink: #fe428e;
+  --purple: #7f00ff;
+  --violet: #ae81ff;
+  --cyan: #a9fef7;
+  --yellow: #f8d847;
+  --radius: 16px;
+  --max: 1120px;
+  --font: "Space Grotesk", system-ui, sans-serif;
+  --mono: "Fira Code", ui-monospace, monospace;
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: var(--cyan);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--pink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--pink);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+section {
+  padding: 72px 0 24px;
+}
+
+.section-title {
+  font-family: var(--mono);
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  margin: 0 0 28px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.section-title::before {
+  content: "#";
+  color: var(--pink);
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
